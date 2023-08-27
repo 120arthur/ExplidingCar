@@ -1,4 +1,4 @@
-Library: D:\lumen\Fortis\Elvis_Project\Exploding_Car\Temp\StagingArea\tempburstlibs\armeabi-v7a\lib_burst_generated
+Library: D:\lumen\Fortis\ExplidingCar\Exploding_Car\Temp\StagingArea\tempburstlibs\armeabi-v7a\lib_burst_generated
 --platform=Android
 --backend=burst-llvm-14
 --target=ARMV7A_NEON32
@@ -99,11 +99,6 @@ Library: D:\lumen\Fortis\Elvis_Project\Exploding_Car\Temp\StagingArea\tempburstl
 --compilation-defines=NET_STANDARD_2_1
 --compilation-defines=NETSTANDARD
 --compilation-defines=NETSTANDARD2_1
---compilation-defines=DEVELOPMENT_BUILD
---compilation-defines=ENABLE_PROFILER
---compilation-defines=DEBUG
---compilation-defines=TRACE
---compilation-defines=UNITY_ASSERTIONS
 --compilation-defines=ENABLE_CUSTOM_RENDER_TEXTURE
 --compilation-defines=ENABLE_DIRECTOR
 --compilation-defines=ENABLE_LOCALIZATION
@@ -133,11 +128,10 @@ Library: D:\lumen\Fortis\Elvis_Project\Exploding_Car\Temp\StagingArea\tempburstl
 --compilation-defines=ENABLE_ASYNC_ASSETBUNDLE_UWR
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=D:\lumen\Fortis\Elvis_Project\Exploding_Car\Temp\Burst
---debug=Full
+--temp-folder=D:\lumen\Fortis\ExplidingCar\Exploding_Car\Temp\Burst
 --key-folder=D:/unity/2021.3.27f1/Editor/Data/PlaybackEngines/AndroidPlayer
---decode-folder=D:\lumen\Fortis\Elvis_Project\Exploding_Car\Library\Burst
---output=D:\lumen\Fortis\Elvis_Project\Exploding_Car\Temp\StagingArea\tempburstlibs\armeabi-v7a\lib_burst_generated
+--decode-folder=D:\lumen\Fortis\ExplidingCar\Exploding_Car\Library\Burst
+--output=D:\lumen\Fortis\ExplidingCar\Exploding_Car\Temp\StagingArea\tempburstlibs\armeabi-v7a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
