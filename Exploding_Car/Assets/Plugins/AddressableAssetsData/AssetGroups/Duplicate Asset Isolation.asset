@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Duplicate Asset Isolation
+  m_EditorClassIdentifier: 
+  m_GroupName: Duplicate Asset Isolation
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9ea4cd71404b46e4994ecf6bb2b36d0a
+  m_SerializeEntries:
+  - m_GUID: 8cb1429816aac9245b8d6076a07e21f9
+    m_Address: Assets/Art/Models/Car.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0eb0ac0c53b089a4f93d94503718cc63
+    m_Address: Assets/Animations/Controllers/Npc.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d5700fc652521034ab0f5c0cfbe45f0f
+    m_Address: Assets/Art/Textures/car/Normal.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 45d9b219593674a49affa9e09186c247
+    m_Address: Assets/Animations/Run.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: fdd6d4441f9ae7d4ba6785e65c38c4bd, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: d5adcf1a8b5625e4888673617ea74b6b, type: 2}
+    - {fileID: 11400000, guid: fa344145135ab494c9a6dc0bf12b0d79, type: 2}

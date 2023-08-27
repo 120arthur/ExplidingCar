@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: NPCs
+  m_EditorClassIdentifier: 
+  m_GroupName: NPCs
+  m_Data:
+    m_SerializedData: []
+  m_GUID: f680fe153e7ab164ab60790a6ce8502a
+  m_SerializeEntries:
+  - m_GUID: c8973ff74fa287e48abbbbec25888df8
+    m_Address: NPCWhite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Npc
+    - npc
+  - m_GUID: f0ec99e562c464945aacc2bc38b39b25
+    m_Address: NPCRed
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Npc
+    - npc
+  - m_GUID: c15afe83c3070b34e8ebf99c80b15c97
+    m_Address: NPCsBlue
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Npc
+    - npc
+  - m_GUID: 99dee792fe70f4d46975902461c74a92
+    m_Address: NPCBlack
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Npc
+    - npc
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: fdd6d4441f9ae7d4ba6785e65c38c4bd, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: faeb35d543e358a4e862e6d83c5873a0, type: 2}
+    - {fileID: 11400000, guid: d56f419adcea3f44ab8e149e0274dbeb, type: 2}
