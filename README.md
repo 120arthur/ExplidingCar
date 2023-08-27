@@ -1,10 +1,12 @@
+The password to the KeyStore: 123456
+
 ## Overview
 
 This project demonstrates a flexible and organized approach to NPC spawning, utilizing Unity, Zenject for dependency injection, signal handling, and addressables.
 
 ## Thinking Process
 
-The usage of dependency injection through Zenject ensures clean separation of concerns, signal handling allows different components to communicate effectively, and the addressables provide a better manage of memory. The code snippets were designed to be reusable and extensible.
+The usage of dependency injection through Zenject ensures clean separation of concerns, signal handling allows different components to communicate effectively, and the addressables provide a better memory usage. The code snippets were designed to be reusable and extensible.
 
 ### `SpawnerNPCController.cs`
 
@@ -32,7 +34,7 @@ The `Hud` class represents the HUD in the game. It uses Zenject to inject depend
 
 ## Conclusion
 
-The project achieves modularity and scalability, facilitating code maintenance and further development.
+The project achieves modularity and scalability.
 
 ## Memory Report	
 
@@ -40,7 +42,7 @@ NPC Spawn Limit
 NPCs adhere to preset spawn limits, controlling memory usage and preventing excessive NPCs.
 
 Memory Usage
-The NPC spawning system efficiently manages memory allocation and deallocation, maintaining stable memory consumption.
+The NPC spawning system efficiently manages memory allocation, maintaining stable memory consumption.
 
 Spawn Interval and Performance
 Spawn intervals ≥ 0.3s: No notable performance impact.
