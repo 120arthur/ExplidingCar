@@ -1,12 +1,18 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Enumerates the different types of Particles.
+/// </summary>
 public enum ParticleType
 {
     Explosion
 }
 
-public class ParticleHandler : MonoBehaviour
+/// <summary>
+/// Controls behavior of Particles in the game.
+/// </summary>
+public class ParticleController : MonoBehaviour
 {
     [SerializeField]
     private ParticleSystem m_particleSystem;
@@ -24,6 +30,10 @@ public class ParticleHandler : MonoBehaviour
         m_WaitToDisable = new WaitForSeconds(m_particleDuration);
     }
 
+    /// <summary>
+    /// Start playing the particle effect at the specified position.
+    /// </summary>
+    /// <param name="position">The position at which to start the particle effect.</param>
     public void StartParticle(Vector3 position)
     {
         transform.position = position;
@@ -32,6 +42,10 @@ public class ParticleHandler : MonoBehaviour
         StartCoroutine(EndParticle());
     }
 
+    /// <summary>
+    /// Coroutine to wait for the particle effect duration and then stop it.
+    /// </summary>
+    /// <returns>An IEnumerator used for the coroutine.</returns>
     public IEnumerator EndParticle()
     {
         yield return m_WaitToDisable;

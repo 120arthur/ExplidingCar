@@ -3,17 +3,20 @@ using Zenject;
 using System.Collections.Generic;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-
-public class SpawnerNPCController : BaseSpawner<NPCType, NPCController>
+/// <summary>
+/// A concrete implementation of a spawner controller for NPCs.
+/// Inherits from the generic BaseSpawner class.
+/// </summary>
+public class SpawnerNPCController : BaseSpawner<NPCType, NPCBehaviorController>
 {
     private const int MAX_NPCS_OF_TYPE = 200;
 
     [Inject]
     private IInstantiator m_instantiator;
 
-    protected override NPCController GetInactiveObject(NPCType nPCType)
+    protected override NPCBehaviorController GetInactiveObject(NPCType nPCType)
     {
-        List<NPCController> npcList;
+        List<NPCBehaviorController> npcList;
         if (m_objects.TryGetValue(nPCType, out npcList))
         {
             foreach (var npc in npcList)
@@ -27,18 +30,18 @@ public class SpawnerNPCController : BaseSpawner<NPCType, NPCController>
         return null;
     }
 
-    public override void EnableObject(Vector3 position, NPCController currentObject)
+    protected override void EnableObject(Vector3 position, NPCBehaviorController currentObject)
     {
         currentObject.EnableNPC(position);
     }
 
-    public override void CreateObject(NPCType nPCType, Vector3 position)
+    protected override void InstantiateObject(NPCType nPCType, Vector3 position)
     {
         bool hasReference = m_objectsOperationHandle.TryGetValue(nPCType, out var handle) && handle.Status == AsyncOperationStatus.Succeeded;
 
         if (m_objects.TryGetValue(nPCType, out var nPCList) && nPCList.Count < MAX_NPCS_OF_TYPE && hasReference)
         {
-            NPCController npc = m_instantiator.InstantiatePrefabForComponent<NPCController>(handle.Result);
+            NPCBehaviorController npc = m_instantiator.InstantiatePrefabForComponent<NPCBehaviorController>(handle.Result);
             npc.Init(nPCType, position);
             nPCList.Add(npc);
         }

@@ -9,7 +9,7 @@ public class GameInstaller : MonoInstaller<GameInstaller>
 
         Container.DeclareSignal<OnSpawnerRateTimeChangeSignal>();
 
-        Container.Bind<SpawnerNPCController>().AsSingle();
-        Container.Bind<SpawnParticleController>().AsSingle();
+        Container.Bind(typeof(ISpawner<NPCType>)).WithId("NPCSpawner").To(typeof(SpawnerNPCController)).AsSingle();
+        Container.Bind(typeof(ISpawner<ParticleType>)).WithId("ParticleSpawner").To(typeof(SpawnParticleController)).AsSingle();
     }
 }

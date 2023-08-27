@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using Zenject;
-
-public class SpawnParticleController : BaseSpawner<ParticleType, ParticleHandler>
+/// <summary>
+/// A concrete implementation of a spawner controller for Particles.
+/// Inherits from the generic BaseSpawner class.
+/// </summary>
+public class SpawnParticleController : BaseSpawner<ParticleType, ParticleController>
 {
     [Inject]
     private IInstantiator m_instantiator;
 
-    protected override ParticleHandler GetInactiveObject(ParticleType particleType)
+    protected override ParticleController GetInactiveObject(ParticleType particleType)
     {
-        List<ParticleHandler> npcList;
+        List<ParticleController> npcList;
         if (m_objects.TryGetValue(particleType, out npcList))
         {
             foreach (var npc in npcList)
@@ -25,18 +28,18 @@ public class SpawnParticleController : BaseSpawner<ParticleType, ParticleHandler
         return null;
     }
 
-    public override void EnableObject(Vector3 position, ParticleHandler currentObject)
+    protected override void EnableObject(Vector3 position, ParticleController currentObject)
     {
         currentObject.StartParticle(position);
     }
 
-    public override void CreateObject(ParticleType nPCType, Vector3 position)
+    protected override void InstantiateObject(ParticleType nPCType, Vector3 position)
     {
         bool hasReference = m_objectsOperationHandle.TryGetValue(nPCType, out var handle) && handle.Status == AsyncOperationStatus.Succeeded;
 
         if (m_objects.TryGetValue(nPCType, out var nPCList) && hasReference)
         {
-            ParticleHandler npc = m_instantiator.InstantiatePrefabForComponent<ParticleHandler>(handle.Result);
+            ParticleController npc = m_instantiator.InstantiatePrefabForComponent<ParticleController>(handle.Result);
             npc.StartParticle(position);
             nPCList.Add(npc);
         }
