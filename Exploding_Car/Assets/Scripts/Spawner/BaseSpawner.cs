@@ -35,15 +35,15 @@ public abstract class BaseSpawner<T, T2> : ISpawner<T>
             m_objects.Add(objectType, new List<T2>());
         }
 
-        T2 Object = GetInactiveObject(objectType);
+        T2 inactiveObject = GetInactiveObject(objectType);
 
-        if (Object == null)
+        if (inactiveObject == null)
         {
             InstantiateObject(objectType, position);
         }
         else
         {
-            EnableObject(position, Object);
+            EnableObject(position, inactiveObject);
         }
     }
 

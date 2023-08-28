@@ -7,7 +7,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 /// A concrete implementation of a spawner controller for NPCs.
 /// Inherits from the generic BaseSpawner class.
 /// </summary>
-public class SpawnerNPCController : BaseSpawner<NPCType, NPCBehaviorController>
+public class NPCSpawnerController : BaseSpawner<NPCType, NPCBehaviorController>
 {
     private const int MAX_NPCS_OF_TYPE = 200;
 
@@ -35,15 +35,15 @@ public class SpawnerNPCController : BaseSpawner<NPCType, NPCBehaviorController>
         currentObject.EnableNPC(position);
     }
 
-    protected override void InstantiateObject(NPCType nPCType, Vector3 position)
+    protected override void InstantiateObject(NPCType npcType, Vector3 position)
     {
-        bool hasReference = m_objectsOperationHandle.TryGetValue(nPCType, out var handle) && handle.Status == AsyncOperationStatus.Succeeded;
+        bool hasReference = m_objectsOperationHandle.TryGetValue(npcType, out var handle) && handle.Status == AsyncOperationStatus.Succeeded;
 
-        if (m_objects.TryGetValue(nPCType, out var nPCList) && nPCList.Count < MAX_NPCS_OF_TYPE && hasReference)
+        if (m_objects.TryGetValue(npcType, out var npcList) && npcList.Count < MAX_NPCS_OF_TYPE && hasReference)
         {
             NPCBehaviorController npc = m_instantiator.InstantiatePrefabForComponent<NPCBehaviorController>(handle.Result);
-            npc.Init(nPCType, position);
-            nPCList.Add(npc);
+            npc.InitNPC(npcType, position);
+            npcList.Add(npc);
         }
     }
 

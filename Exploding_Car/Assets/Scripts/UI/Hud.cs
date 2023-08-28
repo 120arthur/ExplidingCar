@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Hud : MonoBehaviour
 {
+    public const float DEFAULT_DELAY_TO_SPAWN = 4;
+
     [Inject]
     private SignalBus m_signalBus;
 

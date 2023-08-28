@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_navMeshAgent: {fileID: 6036303373756824073}
-  arrivalThreshold: 10
+  m_arrivalThreshold: 10
 --- !u!65 &6944938099697153160
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -12,22 +12,23 @@ public enum ParticleType
 /// <summary>
 /// Controls behavior of Particles in the game.
 /// </summary>
-public class ParticleController : MonoBehaviour
+public class ParticleEffectHandler : MonoBehaviour
 {
     [SerializeField]
     private ParticleSystem m_particleSystem;
     [SerializeField]
     private float m_particleDuration;
 
-    private WaitForSeconds m_WaitToDisable;
+    private WaitForSeconds m_waitToDisable;
 
     private bool m_isActive;
 
     public bool IsActive => m_isActive;
 
-    private void Start()
+    public void InitPartice(Vector3 position)
     {
-        m_WaitToDisable = new WaitForSeconds(m_particleDuration);
+        m_waitToDisable = new WaitForSeconds(m_particleDuration);
+        StartParticle(position);
     }
 
     /// <summary>
@@ -46,9 +47,9 @@ public class ParticleController : MonoBehaviour
     /// Coroutine to wait for the particle effect duration and then stop it.
     /// </summary>
     /// <returns>An IEnumerator used for the coroutine.</returns>
-    public IEnumerator EndParticle()
+    private IEnumerator EndParticle()
     {
-        yield return m_WaitToDisable;
+        yield return m_waitToDisable;
         m_isActive = false;
         m_particleSystem.Stop();
     }

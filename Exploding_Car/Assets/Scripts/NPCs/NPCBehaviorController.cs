@@ -31,7 +31,7 @@ public class NPCBehaviorController : MonoBehaviour
     private NavMeshAgent m_navMeshAgent;
 
     [SerializeField]
-    private float arrivalThreshold = 1;
+    private float m_arrivalThreshold = 1;
 
     private bool m_isActive;
     private NPCType m_npcType;
@@ -39,12 +39,11 @@ public class NPCBehaviorController : MonoBehaviour
     private bool m_initCloneRequested;
 
     public NPCType InstanceNPCType => m_npcType;
-
     public bool IsActive => m_isActive;
 
     private void FixedUpdate()
     {
-        if (m_navMeshAgent.remainingDistance <= arrivalThreshold)
+        if (m_navMeshAgent.remainingDistance <= m_arrivalThreshold)
         {
             ChangeDestination();
         }
@@ -65,17 +64,13 @@ public class NPCBehaviorController : MonoBehaviour
     /// </summary>
     /// <param name="nPCType">The type of NPC.</param>
     /// <param name="position">The initial position.</param>
-    public void Init(NPCType nPCType, Vector3 position)
+    public void InitNPC(NPCType nPCType, Vector3 position)
     {
         m_waitTimeToClone = new WaitForSeconds(INIT_NPC_CLONE_COOLDOWN);
         m_npcType = nPCType;
         EnableNPC(position);
     }
 
-    /// <summary>
-    /// Handles collisions with other NPCs.
-    /// </summary>
-    /// <param name="otherNPC">The other NPC involved in the collision.</param>
     private void HandleCollisionWithNPC(NPCBehaviorController otherNPC)
     {
         if (otherNPC.InstanceNPCType == m_npcType)
@@ -117,7 +112,7 @@ public class NPCBehaviorController : MonoBehaviour
     }
 
     /// <summary>
-    /// Initiates a cooldown for initializing a clone.
+    /// Starts a timer to become available to instantiate a clone.
     /// </summary>
     /// <returns>An IEnumerator used for the coroutine.</returns>
     private IEnumerator InitCloneCooldown()
