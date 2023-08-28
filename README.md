@@ -6,7 +6,7 @@ This project demonstrates a flexible and organized approach to NPC spawning, uti
 
 ## Thinking Process
 
-The usage of dependency injection through Zenject ensures clean separation of concerns, signal handling allows different components to communicate effectively, and the addressables provide a better memory usage. The code snippets were designed to be reusable and extensible.
+The usage of dependency injection through Zenject ensures clean separation of concerns, signal handling allows different components to communicate effectively, and the addressables provide a better memory usage. The code snippets were designed to be reusable and scalable.
 
 ### `NPCSpawnerController.cs` and `ParticleSpawnerController.cs`
 
@@ -36,7 +36,7 @@ The `Hud` class represents the HUD in the game. It uses Zenject to inject depend
 
 The NPC Spawning System showcases a structured approach to managing NPCs, and particle effects. By adhering to best practices and leveraging Zenject and signal handling, the project achieves modularity and scalability, facilitating code maintenance and further development.
 
-## Memory Report	
+## Performance
 
 NPC Spawn Limit
 NPCs adhere to preset spawn limits, controlling memory usage and preventing excessive NPCs.
